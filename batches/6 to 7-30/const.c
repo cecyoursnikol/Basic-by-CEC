@@ -2,7 +2,7 @@
  int main (){
  	
  	const char Name = 'H';
- 	char Name = 'F';
+ 	 Name = 'F';
  	printf("The Name Of The Person is %c",Name);
  	
  	const int Age = 22;
