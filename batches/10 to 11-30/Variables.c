@@ -12,22 +12,22 @@ int main(){
 //	  this method \n */
 //	  
 //	  printf("/n/n I am using backslash \n for next line.");
+//	  
+//	  int Number = 21;
+//	  Number = 25;
+//	  int OtherNumber;
+////	  
+//	  OtherNumber = Number;
+//	  
+//	  float Marks = 73.73;
+//	  char Grade = 'A';
 	  
-	  int Number = 21;
-	  Number = 25;
-	  int OtherNumber;
-	  
-	  OtherNumber = Number;
-	  
-	  float Marks = 73.73;
-	  char Grade = 'A';
-	  
-	  printf("My roll no. is = %d\n",OtherNumber + Number);
-	  
-	  printf("My Percentage is = %.2f\n",Marks);
-	  
-	  printf("My Grade is = %c\n",Grade);
-	  
+//	  printf("My roll no. is = %d\n", OtherNumber + Number);
+//	  
+//	  printf("My Percentage is = %.2f\n",Marks);
+//	  
+//	  printf("My Grade is = %c\n",Grade);
+//	  
 	  int x, y, z;
 	  
 	  printf("X = ",x);
