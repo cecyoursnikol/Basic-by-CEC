@@ -3,10 +3,10 @@
 int main(){
 	
 	char x = 'H';
-	char sujal[] = "Hello";
+	char dev[] = "Hello i am dev";
 	
 	printf("Character is :- %c\n",x);
-	printf("Character is :- %s",sujal);
+	printf("Character is :- %s",dev);
 
 	
 	return 0;
