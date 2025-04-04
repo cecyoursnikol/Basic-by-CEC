@@ -2,11 +2,11 @@
 
 int main() {
     int num, i;
-    char ch, choice;
+    char sign, choice;
 
     do {
         printf("Enter the sign (+, -, *, /): ");  
-        scanf(" %c", &ch);  // Added a space before %c to avoid newline issue
+        scanf(" %c", &sign);  // Added a space before %c to avoid newline issue
 
         printf("Enter first number: ");
         scanf("%d", &num);
@@ -15,7 +15,7 @@ int main() {
         scanf("%d", &i);
 
         printf("\nAnswer: ");
-        switch (ch) {
+        switch (sign) {
             case '+': printf("%d + %d = %d\n", num, i, num + i); break;
             case '-': printf("%d - %d = %d\n", num, i, num - i); break;
             case '*': printf("%d * %d = %d\n", num, i, num * i); break;
@@ -23,7 +23,7 @@ int main() {
                 if (i != 0)
                     printf("%d / %d = %d\n", num, i, num / i);
                 else
-                    printf("Division by zero is not allowed!\n");
+                    printf("Division by zero is not possible!\n");
                 break;
             default:
                 printf("ERROR!! Invalid operation\n");

@@ -10,6 +10,8 @@ int main(){
 	printf("\nEnter number for B:- ",b);
 	scanf("%d",&b);
 	
+	//ladder if else
+	
 	if(a == b){
 		printf("A is equal to B.");
 	}
