@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery Price Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #444;
+            color: white;
+            border: 2px solid black; /* Enhanced border for headers */
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Grocery Store - Item Price List</h2>
+
+<table>
+    <tr>
+        <th rowspan="2">Category</th>
+        <th rowspan="2">Item</th>
+        <th colspan="2">Price</th>
+    </tr>
+    <tr>
+        <th>Per Unit</th>
+        <th>Per Kg</th>
+    </tr>
+
+    <tr>
+        <td rowspan="2" style="background-color:#d9ead3;">Vegetables</td>
+        <td style="background-color:#fce5cd;">Potato</td>
+        <td>₹10</td>
+        <td>₹20</td>
+    </tr>
+
+    <tr>
+        <td style="background-color:#fce5cd;">Tomato</td>
+        <td>₹12</td>
+        <td>₹24</td>
+    </tr>
+
+    <tr>
+        <td rowspan="2" style="background-color:#d0e0e3;">Fruits</td>
+        <td style="background-color:#fff2cc;">Banana</td>
+        <td>₹5</td>
+        <td>—</td>
+    </tr>
+
+    <tr>
+        <td style="background-color:#fff2cc;">Apple</td>
+        <td>₹25</td>
+        <td>₹150</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style="background-color:#ead1dc;"><strong>Note:</strong> Prices may vary by season.</td>
+        <td colspan="2" style="background-color:#ead1dc;">Updated Weekly</td>
+    </tr>
+</table>
+
+</body>
+</html>
