@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display in HTML </title>
+
+    <style>
+
+        .blockdisplay{
+            border: 1px solid black;
+            height: 300px;
+            width: 100%;
+            display: block;
+            background-color: antiquewhite;
+        }
+
+        p{
+            font-size: 20px;
+        }
+
+        ul{
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+        <h2>Display properties in HTML</h2>
+    </center>
+    <div class="blockdisplay">
+    <h3>Block level Diplay Elements :-</h3>
+
+    <p>A block-level element ALWAYS starts on a new line and takes up the full width available (stretches out to the
+        left and right as far as it can).</p>
+
+    <p>Examples of block-level elements:-
+
+        <ul>
+            <li>div</li>
+            <li>h1 to h6</li>
+            <li>p</li>
+            <li>form</li>
+            <li>header</li>
+            <li>footer</li>
+            <li>section</li>
+        </ul>
+    </p>
+</div>
+
+<div class="inline">
+
+    <h2>Inline Level Display Element :-</h2>
+    <p>An inline element DOES NOT start on a new line and only takes up as much width as necessary.
+        This is <span style="border: 5px solid blue;">an inline element</span> inside a paragraph.
+    </p>
+</div>
+
+</body>
+
+</html>

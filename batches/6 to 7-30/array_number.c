@@ -6,7 +6,5 @@
  	
  	printf("%d",x[7]);
  	
- 	
- 	
  	return 0;
  }
