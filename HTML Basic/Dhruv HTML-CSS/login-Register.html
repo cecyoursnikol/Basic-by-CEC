@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Register</title>
+
+<style>
+
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-self: center;
+        background-image: linear-gradient(to right bottom, #7299d4, #00a7d7, #00afb2, #00b06d, #79a713);
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+    .container{
+        border: 2px solid  black;
+        height: 300px;
+        width: 300px;
+        text-align: center;
+        background-image: linear-gradient(to left top, #7299d4, #00a7d7, #00afb2, #00b06d, #79a713);
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 200px;
+        transition: 0.7s;
+    }
+
+    .container:hover{
+        scale: 1.1;
+    }
+
+    .log{
+        color: ghostwhite;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 40px;
+    }
+
+    #u_name, #pass{
+        border-radius: 20px;
+        height: 30px;
+        width: 250px;
+        margin: 5px;       
+    }
+
+    .submit{
+        background-color: #00b06d;
+        color: white;
+        height: 40px;
+        width: 100px;
+        font-size: larger;
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+
+    .submit:hover{
+        background-color: green;
+        scale: 1.1;
+    }
+
+    a{
+        font-size: large;
+        color: darkblue;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+        <div class="container" >
+            <h1 class="log">Login</h1>
+            <form>
+                <input type="text" placeholder="Username" id="u_name" required>
+                <input type="password" placeholder="Password" id="pass" required>
+                <br>
+                <button type="submit" class="submit">Submit</button>
+                <br><br><a href="#">Register now</a>
+            </form>
+        </div>
+    
+        <!-- <div class="container register-container" id="registerContainer" style="display: none;">
+            <h1>Registration Form</h1>
+            <form>
+                <input type="text" placeholder="Your Name" id="y_name" required>
+                <input type="email" placeholder="Email" id="y_email" required>
+                <input type="password" placeholder="Create Password" id="c_pass" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+         -->
+
+    
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Form Example</title>
+
+  <style>
+    /* Gradient background for the page */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #00bcd4, #8e44ad);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Styling for the form container */
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.02);  /* Slight scaling effect on hover */
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* Styling for form labels */
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* General input styling */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="time"],
+    input[type="file"],
+    input[type="range"],
+    input[type="submit"],
+    input[type="radio"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    /* Styling for input when focused */
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="tel"]:focus,
+    input[type="url"]:focus,
+    input[type="date"]:focus,
+    input[type="time"]:focus,
+    input[type="file"]:focus,
+    input[type="range"]:focus,
+    input[type="submit"]:hover {
+      border-color: #00bcd4;
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    }
+
+    /* Styling for submit button */
+    input[type="submit"] {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0097a7;
+    }
+
+    /* Styling for checkboxes and radio buttons */
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: auto;
+      margin-right: 10px;
+      transition: transform 0.3s;
+    }
+
+    input[type="checkbox"]:checked,
+    input[type="radio"]:checked {
+      transform: scale(1.2);
+    }
+
+    /* Additional styling for the form groups */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    /* Styling for the form on small screens (responsive) */
+    @media (max-width: 480px) {
+      form {
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="date"],
+      input[type="time"],
+      input[type="file"],
+      input[type="range"],
+      input[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <form id="exampleForm">
+    <h1>Join Us Today!</h1>
+
+    <div class="form-group">
+      <label for="text-input">Full Name:</label>
+      <input type="text" id="text-input" name="text-input" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="number">Age:</label>
+      <input type="number" id="number" name="number" min="18" max="100" placeholder="Enter your age" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tel">Phone Number:</label>
+      <input type="tel" id="tel" name="tel" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="url">Website URL:</label>
+      <input type="url" id="url" name="url" placeholder="Enter your website URL" required>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date of Birth:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <div class="form-group">
+      <label for="time">Preferred Contact Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+
+    <div class="form-group">
+      <label for="checkbox">I agree to the Terms:</label>
+      <input type="checkbox" id="checkbox" name="checkbox" required>
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Contact Method:</label>
+      <input type="radio" id="radio1" name="radio" value="email" required> Email
+      <input type="radio" id="radio2" name="radio" value="phone"> Phone
+    </div>
+
+    <div class="form-group">
+      <label for="file">Upload your profile picture:</label>
+      <input type="file" id="file" name="file" required>
+    </div>
+
+    <div class="form-group">
+      <label for="range">How excited are you? (1-10):</label>
+      <input type="range" id="range" name="range" min="1" max="10" value="5">
+    </div>
+
+    <div class="button-container">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <script>
+    document.getElementById('exampleForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      let output = 'Form Data:\n';
+      formData.forEach((value, key) => {
+        output += `${key}: ${value}\n`;
+      });
+
+      alert(output);  // Display the form data in an alert box
+    });
+  </script>
+
+</body>
+</html>
