@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.list-item ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.list-item ul li {
+    position: relative;
+}
+
+.list-item ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem;
+    display: block;
+}
+
+.list-item ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 150px;
+}
+
+.list-item ul li .dropdown-menu li a {
+    color: #fff;
+    padding: 0.5rem;
+    display: block;
+}
+
+.list-item ul li:hover .dropdown-menu {
+    display: block;
+}

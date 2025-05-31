@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meal Planner Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Weekly Meal Planner</h2>
+
+<table>
+    <tr>
+        <th rowspan="2">Day</th>
+        <th colspan="2">Meals</th>
+    </tr>
+    <tr>
+        <th>Breakfast</th>
+        <th>Lunch</th>
+    </tr>
+
+    <tr>
+        <td>Monday</td>
+        <td>
+            <ul>
+                <li>Chaa</li>
+                <li>Coffee</li>
+                <li>Biscuit or Toast</li>
+            </ul>
+        </td>
+        <td>
+            <ol>
+                <li>Rice</li>
+                <li>Dal</li>
+                <li>Sabji-Roti</li>
+            </ol>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Tuesday</td>
+        <td rowspan="2">
+            <ul>
+                <li>Dosa or Idli</li>
+                <li>Sambhar</li>
+                <li>Coffee or Chaa</li>
+            </ul>
+        </td>
+        <td>
+            <ol>
+                <li>Roti</li>
+                <li>Paneer Tikka</li>
+                <li>Salad</li>
+            </ol>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Wednesday</td>
+        <td>
+            <ol>
+                <li>Pulao</li>
+                <li>Dahi Tikhari</li>
+                <li>Papad</li>
+            </ol>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style="text-align:center; background-color: #f2f2f2;">
+            Meals are subject to change based on availability
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

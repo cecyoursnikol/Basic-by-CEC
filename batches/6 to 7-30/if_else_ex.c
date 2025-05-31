@@ -2,19 +2,19 @@
 
 int main(){
 
-	int x;
+	int x,y;
 	
-	printf("Enter a number:-",x);
+	printf("Enter a number for X:- ",x);
 	scanf("%d",&x);
 	
-	if(x < 0){
-		printf("Entered number is negative.");
-	}
-	else if(x > 0) {
-		printf("Entered number is positive.");
+	printf("Enter a number for Y:- ",y);
+	scanf("%d",&y);
+	
+	if(x < y){
+		printf("X is less than Y.");
 	}
 	else{
-		printf("The number is zero.");
+		printf("X is greater than Y.");
 	}
 
 	return 0;

@@ -6,7 +6,7 @@ int main(){
 	printf("Enter value for x:- ",x);
 	scanf("%f",&x);
 	
-	printf("\n\nX is %.3f",x);
+	printf("\nX is %.2f",x);
 	
 	return 0;
 }

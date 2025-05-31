@@ -2,9 +2,11 @@
 
 int main() {
 	
-	float x = (float) 5/2;
+	float X = (float) 5/2;//explicit conversion
+	float x = 5; //implicit conversion
 	
-	printf("x = %.1f",x);
+	printf("X = %.1f",X);
+	printf("\n\nx = %.1f",x); 
   	
   return 0;
 }

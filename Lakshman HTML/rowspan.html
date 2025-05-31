@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rowspan Table</title>
+    <style>
+        table {
+            font-size: larger;
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table style="width:100%">
+        <tr>
+            <th>Subject</th>
+            <td style="font-weight: 700;">Maths</td>
+            <td style="font-weight: 700;">Science</td>
+        </tr>
+
+        <tr>
+            <th rowspan="4">Marks</th>
+            <td>Sem - 1 </td>
+            <td>Sem - 1 </td>
+        </tr>
+
+        <tr>
+            <td>91/100</td>
+            <td>84/100</td>
+        </tr>
+
+        <tr>
+            <td>Sem - 2</td>
+            <td>Sem - 2</td>
+        </tr>
+
+        <tr>
+            <td>94/100</td>
+            <td>88/100</td>
+        </tr>
+
+
+    </table>
+
+</body>
+
+</html>

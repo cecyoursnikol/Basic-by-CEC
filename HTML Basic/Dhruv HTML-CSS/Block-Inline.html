@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block vs Inline Elements</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+            background-color: #fdd;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 90%;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        hr {
+            border: 1px solid #ccc;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎓 Learn HTML Elements</h1>
+
+    <div class="container">
+        <!-- Block Elements -->
+        <h2>📦 Block Elements</h2>
+        <p>A block element starts on a new line and takes up the full width. Examples include:</p>
+        <ul>
+            <li><code>&lt;div&gt;</code></li>
+            <li><code>&lt;p&gt;</code></li>
+            <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+        </ul>
+        <div style="background: #ecf0f1; padding: 10px; border-left: 5px solid #3498db;">
+            <p>This is a <strong>div</strong> block element containing text.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Inline Elements -->
+        <h2>🔡 Inline Elements</h2>
+        <p>Inline elements do not start on a new line. Examples include: 
+        <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>.</p>
+        <p>This sentence has a <span class="highlight">highlighted word</span> using a <code>&lt;span&gt;</code> tag.</p>
+        <p>Visit <a href="https://www.w3schools.com" target="_blank">W3Schools</a> for tutorials.</p>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h2>📝 Your Task</h2>
+        <p><strong>Goal:</strong> Practice identifying and using block and inline elements.</p>
+        <ol>
+            <li>Open any code editor.</li>
+            <li>Copy this HTML code and save as <code>elements_practice.html</code>.</li>
+            <li>Open in a browser and try adding:
+                <ul>
+                    <li>One new <strong>block</strong> element like <code>&lt;section&gt;</code></li>
+                    <li>One new <strong>inline</strong> element like <code>&lt;em&gt;</code></li>
+                </ul>
+            </li>
+            <li>Style them using your own colors with CSS!</li>
+        </ol>
+    </div>
+
+</body>
+</html>
