@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Roast | Premium Dark Coffee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            100: '#f5ece0',
+                            200: '#e8d5b9',
+                            300: '#d9bc8f',
+                            400: '#c99e5f',
+                            500: '#a87c48',
+                            600: '#8a6339',
+                            700: '#6d4c2b',
+                            800: '#52381f',
+                            900: '#382513',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            background-color: #0a0a0a;
+            color: #f5ece0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 100%, rgba(168, 124, 72, 0.2) 0%, rgba(10, 10, 10, 0) 60%);
+        }
+        
+        .coffee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(168, 124, 72, 0.25);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #c99e5f;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating-beans {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-beans:nth-child(2) {
+            animation-delay: 1s;
+        }
+        
+        .floating-beans:nth-child(3) {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-mug-hot text-coffee-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white font-display">Nebula Roast</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-coffee-200 hover:text-coffee-400 transition-colors duration-300">Home</a>
+                    <a href="#products" class="nav-link text-coffee-200 hover:text-coffee-400 transition-colors duration-300">Products</a>
+                    <a href="#story" class="nav-link text-coffee-200 hover:text-coffee-400 transition-colors duration-300">Our Story</a>
+                    <a href="#brew" class="nav-link text-coffee-200 hover:text-coffee-400 transition-colors duration-300">Brew Guide</a>
+                    <a href="#contact" class="nav-link text-coffee-200 hover:text-coffee-400 transition-colors duration-300">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-coffee-200 hover:text-coffee-400 transition-colors duration-300">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button class="text-coffee-200 hover:text-coffee-400 transition-colors duration-300">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                    </button>
+                    <button id="theme-toggle" class="text-coffee-200 hover:text-coffee-400 transition-colors duration-300">
+                        <i class="fas fa-moon text-lg"></i>
+                    </button>
+                    <button class="md:hidden text-coffee-200 hover:text-coffee-400 transition-colors duration-300">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white font-display mb-6 leading-tight">
+                        Dark Roast <span class="text-coffee-400">Perfection</span> in Every Cup
+                    </h1>
+                    <p class="text-lg text-coffee-200 mb-8 max-w-lg">
+                        Experience the rich, bold flavors of our premium small-batch coffee, roasted to perfection in the heart of the mountains.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-coffee-600 hover:bg-coffee-500 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300 shadow-lg hover:shadow-coffee-600/30">
+                            Shop Now
+                        </button>
+                        <button class="border border-coffee-600 text-coffee-300 hover:bg-coffee-900/50 px-8 py-3 rounded-full font-medium transition-colors duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" 
+                         alt="Premium Coffee" 
+                         class="rounded-2xl shadow-2xl w-full max-w-md mx-auto transform rotate-2">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-coffee-800 rounded-full opacity-20 animate-pulse-slow"></div>
+                    <div class="absolute -bottom-5 -right-5 w-16 h-16 bg-coffee-600 rounded-full opacity-30 animate-pulse-slow"></div>
+                    
+                    <!-- Floating coffee beans -->
+                    <div class="floating-beans absolute -top-5 right-20 w-10 h-10">
+                        <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Coffee bean" class="w-full h-full opacity-70">
+                    </div>
+                    <div class="floating-beans absolute bottom-10 left-5 w-8 h-8">
+                        <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Coffee bean" class="w-full h-full opacity-70">
+                    </div>
+                    <div class="floating-beans absolute top-1/2 -right-5 w-6 h-6">
+                        <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Coffee bean" class="w-full h-full opacity-70">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-coffee-400 font-medium">OUR SELECTION</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white font-display mt-2">Premium Coffee Blends</h2>
+                <p class="text-coffee-200 max-w-2xl mx-auto mt-4">Each batch is carefully roasted to bring out unique flavor profiles that coffee enthusiasts will appreciate.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="coffee-card bg-dark-700 rounded-xl p-6 transition-all duration-500 hover:border-coffee-600 border border-dark-600">
+                    <div class="relative h-64 mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1532638104338-6b0c5c202083?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Midnight Blend" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-coffee-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            BESTSELLER
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-white">Midnight Blend</h3>
+                        <span class="text-coffee-400 font-bold">$18.99</span>
+                    </div>
+                    <p class="text-coffee-300 text-sm mb-4">Dark roast with notes of dark chocolate and toasted walnut</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-coffee-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-coffee-300 text-sm ml-2">(128 reviews)</span>
+                    </div>
+                    <button class="w-full bg-coffee-600 hover:bg-coffee-500 text-white py-3 rounded-lg font-medium transition-colors duration-300">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="coffee-card bg-dark-700 rounded-xl p-6 transition-all duration-500 hover:border-coffee-600 border border-dark-600">
+                    <div class="relative h-64 mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Cosmic Espresso" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-dark-800 text-coffee-400 text-xs font-bold px-3 py-1 rounded-full border border-coffee-600">
+                            LIMITED
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-white">Cosmic Espresso</h3>
+                        <span class="text-coffee-400 font-bold">$22.99</span>
+                    </div>
+                    <p class="text-coffee-300 text-sm mb-4">Intense dark roast with caramel and dried fruit undertones</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-coffee-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-coffee-300 text-sm ml-2">(94 reviews)</span>
+                    </div>
+                    <button class="w-full bg-coffee-600 hover:bg-coffee-500 text-white py-3 rounded-lg font-medium transition-colors duration-300">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="coffee-card bg-dark-700 rounded-xl p-6 transition-all duration-500 hover:border-coffee-600 border border-dark-600">
+                    <div class="relative h-64 mb-6 overflow-hidden rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Black Hole Blend" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-white">Black Hole Blend</h3>
+                        <span class="text-coffee-400 font-bold">$20.99</span>
+                    </div>
+                    <p class="text-coffee-300 text-sm mb-4">Our darkest roast with smoky, earthy flavors and a bold finish</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-coffee-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="text-coffee-300 text-sm ml-2">(76 reviews)</span>
+                    </div>
+                    <button class="w-full bg-coffee-600 hover:bg-coffee-500 text-white py-3 rounded-lg font-medium transition-colors duration-300">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border border-coffee-600 text-coffee-300 hover:bg-coffee-900/50 px-8 py-3 rounded-full font-medium transition-colors duration-300">
+                    View All Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <span class="text-coffee-400 font-medium">OUR STORY</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-display mt-2 mb-6">Crafting Exceptional Coffee Since 2010</h2>
+                    <p class="text-coffee-300 mb-6">
+                        Founded in the misty mountains of Colombia, Nebula Roast began with a simple mission: to source and roast the finest coffee beans while respecting the land and the people who cultivate them.
+                    </p>
+                    <p class="text-coffee-300 mb-8">
+                        Our master roaster, Alejandro, brings over 20 years of experience to each batch, ensuring that every bean reaches its full potential. We work directly with small farms to ensure fair prices and sustainable practices.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center mr-3">
+                                    <i class="fas fa-seedling text-coffee-400"></i>
+                                </div>
+                                <h4 class="font-bold text-white">Sustainable Sourcing</h4>
+                            </div>
+                            <p class="text-coffee-300 text-sm">Direct trade with small farms practicing organic methods</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center mr-3">
+                                    <i class="fas fa-fire text-coffee-400"></i>
+                                </div>
+                                <h4 class="font-bold text-white">Artisan Roasting</h4>
+                            </div>
+                            <p class="text-coffee-300 text-sm">Small batch roasting for optimal flavor development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1459755486867-b554a4440a71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Coffee Roasting" 
+                             class="rounded-xl shadow-xl w-full">
+                        <div class="absolute -bottom-5 -right-5 w-32 h-32 bg-coffee-800 rounded-full opacity-20 animate-pulse-slow"></div>
+                    </div>
+                    
+                    <!-- Experience badge -->
+                    <div class="absolute -top-5 -left-5 bg-coffee-600 text-white px-6 py-3 rounded-full shadow-lg">
+                        <div class="flex items-center">
+                            <span class="text-3xl font-bold mr-2">13</span>
+                            <span class="text-sm">Years of<br>Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden parallax" 
+             style="background-image: url('https://images.unsplash.com/photo-1453227588453-c102618f5228?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-dark-900/80"></div>
+        <div class="max-w-4xl mx-auto relative text-center">
+            <i class="fas fa-quote-left text-4xl text-coffee-400 opacity-50 mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-bold text-white font-display mb-8 leading-tight">
+                "Great coffee is more than a drink. It's an experience, a ritual, a moment of pause in our busy lives."
+            </h2>
+            <p class="text-coffee-300 font-medium">— Alejandro Martinez, Master Roaster</p>
+        </div>
+    </section>
+
+    <!-- Brew Guide -->
+    <section id="brew" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-coffee-400 font-medium">BREWING PERFECTION</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white font-display mt-2">The Perfect Cup</h2>
+                <p class="text-coffee-200 max-w-2xl mx-auto mt-4">Follow our guide to unlock the full potential of your Nebula Roast coffee.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Measure</h3>
+                    <p class="text-coffee-300">
+                        Use 2 tablespoons (10-12g) of freshly ground coffee for every 6 ounces (180ml) of water. Adjust to taste.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Grind</h3>
+                    <p class="text-coffee-300">
+                        Grind beans immediately before brewing. For drip coffee, aim for a medium-fine consistency like sea salt.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Water</h3>
+                    <p class="text-coffee-300">
+                        Use fresh, filtered water heated to 195-205°F (90-96°C). Too hot and you'll burn, too cool and you'll under-extract.
+                    </p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bloom</h3>
+                    <p class="text-coffee-300">
+                        Pour just enough water to saturate the grounds (about twice the weight of the coffee). Wait 30 seconds.
+                    </p>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        5
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pour</h3>
+                    <p class="text-coffee-300">
+                        Slowly pour remaining water in circular motions. Total brew time should be 3-4 minutes for optimal extraction.
+                    </p>
+                </div>
+                
+                <!-- Step 6 -->
+                <div class="bg-dark-700 rounded-xl p-8 border border-dark-600 hover:border-coffee-600 transition-colors duration-300">
+                    <div class="w-16 h-16 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 text-2xl mb-6">
+                        6
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Enjoy</h3>
+                    <p class="text-coffee-300">
+                        Savor immediately. Our dark roasts develop beautifully as they cool slightly. Notice the evolving flavor profile.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-coffee-400 font-medium">COFFEE CONNOISSEURS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white font-display mt-2">What Our Customers Say</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Sarah J.</h4>
+                            <div class="flex text-coffee-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-coffee-300 mb-4">
+                        "The Midnight Blend is my daily driver. The chocolate notes are incredible and it has just the right amount of bitterness. Never going back to supermarket coffee!"
+                    </p>
+                    <div class="text-coffee-400 text-sm font-medium">
+                        Verified Customer
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Michael T.</h4>
+                            <div class="flex text-coffee-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-coffee-300 mb-4">
+                        "As a barista of 10 years, I'm extremely picky about my coffee. Nebula's Cosmic Espresso is hands down the best beans I've worked with. The crema is perfection."
+                    </p>
+                    <div class="text-coffee-400 text-sm font-medium">
+                        Industry Professional
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-white">Priya K.</h4>
+                            <div class="flex text-coffee-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-coffee-300 mb-4">
+                        "The subscription service is genius. Fresh beans arrive right when I need them, and I love discovering new single-origin releases. Customer service is exceptional too."
+                    </p>
+                    <div class="text-coffee-400 text-sm font-medium">
+                        Subscriber Since 2021
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-coffee-900">
+        <div class="max-w-4xl mx-auto text-center">
+            <i class="fas fa-paper-plane text-4xl text-coffee-400 mb-6"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-white font-display mb-4">Join Our Coffee Journey</h2>
+            <p class="text-coffee-200 max-w-2xl mx-auto mb-8">
+                Subscribe to our newsletter for exclusive offers, brewing tips, and first access to new releases.
+            </p>
+            <div class="flex flex-col sm:flex-row max-w-md mx-auto sm:max-w-xl">
+                <input type="email" placeholder="Your email address" class="px-6 py-4 rounded-l-full sm:rounded-r-none rounded-r-full mb-2 sm:mb-0 w-full text-dark-900 focus:outline-none focus:ring-2 focus:ring-coffee-500">
+                <button class="bg-coffee-600 hover:bg-coffee-500 text-white px-8 py-4 rounded-r-full sm:rounded-l-none rounded-l-full font-medium transition-colors duration-300 whitespace-nowrap">
+                    Subscribe
+                </button>
+            </div>
+            <p class="text-coffee-300 text-xs mt-4">
+                We respect your privacy. Unsubscribe at any time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <span class="text-coffee-400 font-medium">GET IN TOUCH</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white font-display mt-2 mb-6">Contact Us</h2>
+                    <p class="text-coffee-300 mb-8">
+                        Have questions about our products or need brewing advice? Our coffee experts are here to help.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Visit Us</h4>
+                                <p class="text-coffee-300">123 Roaster's Lane<br>Bogotá, Colombia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Email Us</h4>
+                                <p class="text-coffee-300">hello@nebularoast.com<br>wholesale@nebularoast.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center text-coffee-400 mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Call Us</h4>
+                                <p class="text-coffee-300">+57 123 456 7890<br>Mon-Fri, 9am-5pm EST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 hover:bg-coffee-700 flex items-center justify-center text-coffee-400 transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 hover:bg-coffee-700 flex items-center justify-center text-coffee-400 transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 hover:bg-coffee-700 flex items-center justify-center text-coffee-400 transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 hover:bg-coffee-700 flex items-center justify-center text-coffee-400 transition-colors duration-300">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-dark-700 rounded-xl p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-coffee-300 text-sm font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-dark-600 border border-dark-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-coffee-300 text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-dark-600 border border-dark-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-coffee-300 text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-dark-600 border border-dark-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-coffee-300 text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-dark-600 border border-dark-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-coffee-600 hover:bg-coffee-500 text-white px-6 py-4 rounded-lg font-medium transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-coffee-300 py-12 px-4 sm:px-6 lg:px-8 border-t border-dark-700">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <i class="fas fa-mug-hot text-coffee-400 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-white font-display">Nebula Roast</span>
+                    </a>
+                    <p class="mb-4">
+                        Crafting exceptional dark roast coffee with passion and precision since 2010.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-coffee-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-coffee-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-coffee-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-coffee-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">All Coffee</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Dark Roasts</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Espresso Blends</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Limited Editions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Subscription</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Merchandise</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Farm Partners</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Roasting Process</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Brew Guides</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Wholesale</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-dark-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm mb-4 md:mb-0">
+                    &copy; 2023 Nebula Roast. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-sm hover:text-white transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-coffee-600 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-coffee-500 transition-colors duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-900 z-50 flex flex-col items-center justify-center hidden">
+        <button class="absolute top-6 right-6 text-coffee-300 text-2xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="flex flex-col items-center space-y-8">
+            <a href="#" class="text-2xl text-coffee-300 hover:text-white transition-colors duration-300">Home</a>
+            <a href="#products" class="text-2xl text-coffee-300 hover:text-white transition-colors duration-300">Products</a>
+            <a href="#story" class="text-2xl text-coffee-300 hover:text-white transition-colors duration-300">Our Story</a>
+            <a href="#brew" class="text-2xl text-coffee-300 hover:text-white transition-colors duration-300">Brew Guide</a>
+            <a href="#contact" class="text-2xl text-coffee-300 hover:text-white transition-colors duration-300">Contact</a>
+        </nav>
+        <div class="mt-12 flex space-x-6">
+            <a href="#" class="text-coffee-400 hover:text-white text-xl transition-colors duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-coffee-400 hover:text-white text-xl transition-colors duration-300">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-coffee-400 hover:text-white text-xl transition-colors duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            if (html.classList.contains('dark')) {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('nav button.md\\:hidden');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = mobileMenu.querySelector('button');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Product card hover effect
+        const productCards = document.querySelectorAll('.coffee-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('transform');
+                card.classList.add('transition-transform');
+                card.classList.add('duration-300');
+                card.classList.add('ease-in-out');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('transform');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

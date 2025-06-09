@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+<body>
+
+    <p id="fun"></p>
+    <p id="fun2"></p>
+    <p id="obj"></p>
+
+    <script>
+
+        function dhruv(d1,d2) {
+        
+
+            var x = 10;
+            var y = 10;
+            var z = x + y
+            document.getElementById("fun").innerHTML = "Value of z = " + z;
+            return d1 * d2;
+}
+
+        let result = dhruv(10,20);
+
+        document.getElementById("fun2").innerHTML = "d1 x d2 = " + result;
+
+        const car = {type:"Maruti Suzuki", model:"800", color:"white"};
+
+        document.getElementById("obj").innerHTML = " Car Brand :- " + car.type;
+
+
+
+    </script>
+</body>
+</html>
