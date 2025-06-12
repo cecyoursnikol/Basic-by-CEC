@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: linear-gradient(to right top, #f664b7, #cb8df5, #81b2ff, #0eceff, #02e2ff, #00eaf8, #00f2ed, #24f9df, #00f9c5, #00f7a5, #31f47e, #5aef4f);
+            background-repeat: no-repeat;
+            min-height: 78vh;
+        }
+
+        .calculator {
+            width: 500px;
+            height: 350px;
+            background-color: rgba(128, 128, 128, 0);
+            border: none;
+            border-radius: 20px;
+            justify-self: center;
+            margin-top: 150px;
+            transition: 1s ease;
+            box-shadow: 0px 0px 0px #000000;
+        }
+        .calculator:hover{
+            transition: 1s ease;;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            transform: scale(1.05);
+        }
+
+        p{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: blue;
+            margin-top: 10px;
+        }
+        
+        #result{
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        .val {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            width: 250px;
+            height: 30px;
+            margin: 10px;
+            padding: 5px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+        }
+
+        button {
+            width: 90px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #f58f8f;
+            border: 1px solid #000000;
+            cursor: pointer;
+            scale: 1;
+            transition: 1s ease;
+        }
+        button:hover {
+            transition: 1s ease;
+            background-color: #ff0000;
+            color: white;
+            scale: 1.1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <center><p>Simple Calculator</p></center>
+        <div class="val">
+            <input type="number" name="First" id="num1" placeholder="Enter First Number">
+            <input type="number" name="Second" id="num2" placeholder="Enter Second Number">
+        </div>
+        <div class="operationa">
+            <center>
+                <button onclick="add()">Add</button>
+                <button onclick="subtract()">Subtract</button>
+                <button onclick="multiply()">Multiply</button>
+                <button onclick="divide()">Divide</button>
+            </center>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let num1;
+        let num2;
+        let output;
+        function add() {
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+            output = num1 + num2;
+            document.getElementById("result").innerHTML = "The sum is: " + output;
+        }
+        function subtract() {
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+            output = num1 - num2;
+            document.getElementById("result").innerHTML = "The difference is: " + output;
+        }
+        function multiply() {
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+            output = num1 * num2;
+            document.getElementById("result").innerHTML = "The product is : " + output;
+        }
+        function divide() {
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+            output = num1 / num2;
+            document.getElementById("result").innerHTML = "The quotient is : " + output.toFixed(4);
+        }
+
+    </script>
+</body>
+
+</html>

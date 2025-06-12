@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <div id="output"></div>
+    </section>
+
+    <script>
+        var msg = document.getElementById("output");
+
+        const book = {
+            name: "One Piece",
+            price: 599,
+            author: "Eichiro Oda",
+
+            get_price: function () {
+                return this.price;
+            },
+
+            get_name: function () {
+                return this.name;
+            },
+
+            get_display: function () {
+                return "Book: " + this.name + " | Price: " + this.price;
+            },
+
+            set_name: function (bookName) {
+                this.name = bookName;
+            }
+        };
+
+        var x = book.get_price();
+        msg.innerHTML = x + "<br>";
+
+        msg.innerHTML += book.get_display() + "<br>";
+
+        book.set_name("One Piece: Netflix Edition");
+        msg.innerHTML += book.get_display();
+        
+    </script>
+
+</body>
+
+</html>

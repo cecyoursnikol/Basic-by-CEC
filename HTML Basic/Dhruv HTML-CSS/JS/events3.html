@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple JS Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            margin: 0;
+            color: #f5f5f5;
+        }
+
+        .event {
+            height: 200px;
+            width: 200px;
+            border: 3px solid #ff9500;
+            border-radius: 50%;
+            background-color: #2c2c2c;
+            margin: 20px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event:hover {
+            background-color: #ff3333;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input, button, select {
+            padding: 8px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        input {
+            background-color: #333;
+            color: #fff;
+        }
+
+        button {
+            background-color: #ff9500;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e68a00;
+        }
+
+        select {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="event" id="eventCircle"></div>
+    <p id="status">Hover over the circle</p>
+
+    <div class="controls">
+        <input type="text" id="textField" placeholder="Type something...">
+        <button id="clickButton">Click Me!</button>
+        <select id="techList">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JavaScript</option>
+        </select>
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <script>
+        const elements = {
+            circle: document.getElementById('eventCircle'),
+            status: document.getElementById('status'),
+            textField: document.getElementById('textField'),
+            clickButton: document.getElementById('clickButton'),
+            techList: document.getElementById('techList'),
+            submitButton: document.getElementById('submitButton')
+        };
+
+        elements.circle.addEventListener('mouseover', () => {
+            elements.status.textContent = 'Circle hovered!';
+        });
+
+        elements.circle.addEventListener('mouseout', () => {
+            elements.status.textContent = 'Hover over the circle';
+        });
+
+        elements.clickButton.addEventListener('click', () => {
+            elements.status.textContent = 'Button clicked!';
+        });
+
+        document.addEventListener('keydown', (event) => {
+            elements.status.textContent = `Key pressed: ${event.key}`;
+        });
+
+        elements.techList.addEventListener('change', (event) => {
+            elements.status.textContent = `Selected: ${event.target.value}`;
+        });
+
+        elements.submitButton.addEventListener('click', () => {
+            const text = elements.textField.value;
+            elements.status.textContent = text ? `Submitted: ${text}` : 'Please enter text';
+        });
+    </script>
+</body>
+</html>
