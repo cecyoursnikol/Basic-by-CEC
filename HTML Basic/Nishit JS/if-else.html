@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else in JS</title>
+</head>
+
+<body>
+    <h2>JavaScript if .. else</h2>
+
+    <p>Age</p>
+
+    <label>Enter your Age:- </label>
+    <input type="number" id="ageInput">
+    <button type="submit" onclick="checkAge()">Submit</button>
+    <p id="demo"></p>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value;
+            let output;
+
+            if (age < 12) {
+                output = "You are a kid.";
+            } 
+            else if(age > 12 && age <= 19){
+                output = "You are a teenager.";
+            }
+            else if(age > 19 && age <= 50){
+                output = "You are adult.";
+            }
+            else{
+                output = "You are old.";
+            }
+
+            document.getElementById("demo").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
