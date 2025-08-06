@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bill Calculator</h1>
+            <p>Easily calculate your bills with discounts and taxes.</p>
+        </header>
+
+        <button class="add-item-btn" onclick="addItem()">Add New Item</button>
+        <div id="items" class="items-container"></div>
+
+        <div class="dnt">
+            <div class="box">
+                <label for="discount"><i class="fas fa-tag"></i> Discount (%)</label>
+                <input type="number" id="discount" placeholder="0" min="0" max="100" oninput="calculateBill()">
+            </div>
+            <div class="box">
+                <label for="tax"><i class="fas fa-percentage"></i> Tax (%)</label>
+                <input type="number" id="tax" placeholder="10" min="0" max="100" oninput="calculateBill()">
+            </div>
+        </div>
+
+        <div class="total">
+            <h2>Total Amount</h2>
+            <div class="total-amount">
+                <span id="totalAmount">$0.00</span>
+            </div>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <div class="poc">
+            <button class="pay" onclick="payBill()">
+                <i class="fas fa-credit-card"></i> Pay Now
+            </button>
+            <button class="clear" onclick="clearAll()">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

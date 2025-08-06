@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Task</title>
+    <style>
+        .staff {
+            height: 95vh;
+            width: 100%;
+            border: 3px solid black;
+            margin: auto;
+            background-color: white;
+        }
+
+        .name,
+        .info,
+        .detail {
+            display: flex;
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 20px;
+            gap: 100px;
+
+        }
+
+        .asm {
+            background-image: url(https://imgs.search.brave.com/QFKv07waXiIJlFAdh7obUTz5XmPjwAbnKXq4qwKa3fI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzY0LzYxLzA4/LzM2MF9GXzc2NDYx/MDg0Ml9wcUxCWXps/YzhIdWRIOTVWOHVk/Snhibzh0aHNURG5I/VS5qcGc);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: white;
+        }
+
+        input {
+            border-radius: 8px;
+            background-color: lightgray;
+            border-style: none;
+            border: border-box;
+            padding-bottom: 10px;
+            width: 250px;
+            font-size: 18px;
+        }
+
+        .staffdt{
+            display: flex;
+            font-size: 20px;
+            gap: 200px; ;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="staff">
+        <center>
+            <div class="asm">
+                <br>
+                <h1 style="color: whitesmoke;">Add Staff Member</h1><br>
+                <hr color="black">
+            </div>
+        </center>
+
+        <form>
+
+            <div class="name">
+
+                <div class="fname">
+                    <br><label for="first name">First Name</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="lname">
+                    <br><label for="last name">Last Name</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="faname">
+                    <br><label for="father name">Father Name</label><br>
+                    <input type="text">
+                </div>
+
+            </div>
+            <br>
+            <div class="info">
+
+                <div class="des">
+                    <label for="designation">Designation</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="mnum">
+                    <label for="mobile">Mobile Number</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="email">
+                    <label for="email">Email</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="bdate">
+                    <label for="birthdate">Birthdate</label><br>
+                    <input type="text">
+                </div>
+
+            </div>
+            <br>
+
+            <div class="detail">
+
+                <div class="add">
+                    <label for="address">Address</label><br>
+                    <input type="text">
+                </div>
+
+                <div class="ct">
+                    <label for="city">City</label><br>
+                    <select id="gujarat-city" name="gujarat-city">
+                        <option value="">Select City</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Vadodara">Vadodara</option>
+                        <option value="Rajkot">Rajkot</option>
+                        <option value="Gandhinagar">Gandhinagar</option>
+                        <!-- Add more cities as needed -->
+                    </select>
+                </div>
+
+                <div class="st">
+                    <label for="state">State</label><br>
+                    <!--- India states -->
+                    <select id="country-state" name="country-state">
+                        <option value="">Select state</option>
+                        <option value="AN">Andaman and Nicobar Islands</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="CT">Chhattisgarh</option>
+                        <option value="DN">Dadra and Nagar Haveli</option>
+                        <option value="DD">Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="GA">Goa</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="LA">Ladakh</option>
+                        <option value="LD">Lakshadweep</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OR">Odisha</option>
+                        <option value="PY">Puducherry</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TG">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="UT">Uttarakhand</option>
+                        <option value="WB">West Bengal</option>
+                    </select>
+                </div>
+
+                <div class="pcode">
+                    <label for="postal code">Postal Code</label><br>
+                    <input type="text">
+                </div>
+
+            </div>
+            <br>
+
+            <div class="permission">
+                <center>
+                    <hr color="black">
+                    <h1>Permissions</h1>
+                    <hr color="black">
+                </center>
+                <div class="staffdt">
+                    <form>
+                        <div class="addstaff">
+                           <br> <label for="addstaff">Add Staff</label>
+                            <input type="checkbox">
+                        </div>
+
+                        <div class="dltstaff">
+                            <br><label for="dltstaff">Delete Staff</label>
+                            <input type="checkbox">
+                        </div>
+
+                        <div class="viewstaff">
+                            <br><label for="viewstaff">View Staff</label>
+                            <input type="checkbox">
+                        </div>
+
+                
+
+
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
