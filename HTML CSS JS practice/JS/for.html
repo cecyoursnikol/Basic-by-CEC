@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Loop Counting Exam</title>
+  </head>
+  <body>
+    <h2>Count Numbers</h2>
+
+    <label>Enter a number: </label>
+    <input type="number" id="limit" min="1" />
+    <button onclick="countNumbers()">Count</button>
+
+    <p id="result"></p>
+
+    <script>
+      function countNumbers() {
+        let limit = document.getElementById("limit").value;
+        let output = "";
+
+        for (let i = 1; i <= limit; i++) {
+          output += i + "<br>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
