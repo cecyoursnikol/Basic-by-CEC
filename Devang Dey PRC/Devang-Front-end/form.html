@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form in HTML</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color:rgb(250, 211, 154);
+        }
+        form{
+            justify-self: center;
+            margin-top: 60px;
+        }
+        .container{
+            border: none;
+            border-radius: 30px;
+            width: 200px;
+            height: 270px;
+            justify-content: center;
+            align-content: center;
+            padding-left: 30px;
+            line-height: 22px;
+            background-color: rgb(247, 235, 219);
+            transition: 0.5s;
+        }
+        .container:hover{
+            background-color: rgb(252, 230, 202);
+            scale: 1.050;
+        }
+
+        .btn{
+            background-color: #46a849;
+            color: rgb(251, 250, 249);
+            border: none;
+            height: 22px;
+            border-radius: 10px;
+            margin-left: 55px;
+            transition: 0.5s;
+        }
+
+        .btn:hover{
+            background-color: #3dc242;
+            scale: 1.050;
+        }
+
+        input{
+            border-radius: 10px;
+            border: none;
+            height: 20px;
+        }
+        .details{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color: brown;">Form in HTML</h1>
+    </center>
+    <form>
+        <div class="container">
+            
+            <label for="fname" class="details">First Name:- </label><br>
+            <input type="text" name="fname"><br>
+            
+            <label for="lname" class="details">Last Name:- </label><br>
+            <input type="text" name="lname"><br>
+            
+            <label for="contact" class="details">Contact No.:- </label><br>
+            <input type="tel" name="contact"><br>
+            
+            <label for="email" class="details">Email Address:-</label><br>
+            <input type="email" name="email"><br>
+            <br>
+            
+            <button class="btn">Submit</button>
+            
+        </div>
+    </form>
+</body>
+</html>

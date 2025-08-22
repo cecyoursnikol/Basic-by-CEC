@@ -8,7 +8,7 @@ int main() {
 
   // Write some text to the file
   fprintf(fptr, "Some text in this file again!!!!!\n");
-  fprintf(fptr, "\n\nThis is Arya n Malay.");
+  fprintf(fptr, "\n\nThis is Arya & Malay.");
   
   	//read a file
 	char myString[100];

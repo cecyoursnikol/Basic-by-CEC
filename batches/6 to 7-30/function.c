@@ -17,5 +17,7 @@ int main(){
 	fun();
 	fun();
 	fun();	
+	fun();
+	
 	return 0;
 }
