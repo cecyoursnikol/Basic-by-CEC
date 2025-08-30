@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>onchange Fun</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s ease;
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pick a color 🎨</h2>
+  
+  <select onchange="changeColor(this)">
+    <option value="">--Choose--</option>
+    <option value="cyan">Sky Blue</option>
+    <option value="lightgreen">Fresh Green</option>
+    <option value="lightpink">Cute Pink</option>
+    <option value="yellow">Sunny Yellow</option>
+    <option value="lavender">Lavender</option>
+  </select>
+  
+  <h3 id="msg"></h3>
+
+  <script>
+    function changeColor(select) {
+      let color = select.value;
+      if (color) {
+        document.body.style.backgroundColor = color;
+        document.getElementById("msg").innerText = 
+          "Wow! You picked " + color + " 🌟";
+      } else {
+        document.body.style.backgroundColor = "white";
+        document.getElementById("msg").innerText = "";
+      }
+    }
+  </script>
+</body>
+</html>

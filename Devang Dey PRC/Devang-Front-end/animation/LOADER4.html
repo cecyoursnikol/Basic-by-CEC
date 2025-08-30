@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>8 Dot Circular Loader</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      margin: -6px 0 0 -6px;
+      border-radius: 50%;
+      background: #00f2ff;
+      animation: rotate 1.8s linear infinite;
+    }
+
+    /* Position each dot around the circle */
+    .dot:nth-child(1) { transform: rotate(0deg) translateX(40px); animation-delay: 0s; }
+    .dot:nth-child(2) { transform: rotate(45deg) translateX(40px); animation-delay: 0.15s; }
+    .dot:nth-child(3) { transform: rotate(90deg) translateX(40px); animation-delay: 0.3s; }
+    .dot:nth-child(4) { transform: rotate(135deg) translateX(40px); animation-delay: 0.45s; }
+    .dot:nth-child(5) { transform: rotate(180deg) translateX(40px); animation-delay: 0.6s; }
+    .dot:nth-child(6) { transform: rotate(225deg) translateX(40px); animation-delay: 0.75s; }
+    .dot:nth-child(7) { transform: rotate(270deg) translateX(40px); animation-delay: 0.9s; }
+    .dot:nth-child(8) { transform: rotate(315deg) translateX(40px); animation-delay: 1.05s; }
+
+    @keyframes rotate {
+      0% {
+        opacity: 0;
+        transform: rotate(0deg) translateX(40px) scale(0.5);
+      }
+      
+      50% {
+        opacity: 1;
+        transform: rotate(180deg) translateX(40px) scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: rotate(360deg) translateX(40px) scale(0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>

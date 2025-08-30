@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colorful Circular Dot Loader</title>
+  <style>
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* margin: 0; */
+    }
+
+    .loader {
+      position: relative;
+      width: 100px;
+      height: 100px;
+    }
+
+    .dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      /* margin: -5px 0 0 -5px; */
+      animation: orbit 2s linear infinite;
+    }
+
+    .dot:nth-child(1) { background: #ff2d75; animation-delay: 0s; }
+    .dot:nth-child(2) { background: #ff9800; animation-delay: 0.25s; }
+    .dot:nth-child(3) { background: #ffeb3b; animation-delay: 0.5s; }
+    .dot:nth-child(4) { background: #4caf50; animation-delay: 0.75s; }
+    .dot:nth-child(5) { background: #00bcd4; animation-delay: 1s; }
+    .dot:nth-child(6) { background: #3f51b5; animation-delay: 1.25s; }
+    .dot:nth-child(7) { background: #9c27b0; animation-delay: 1.5s; }
+    .dot:nth-child(8) { background: #e91e63; animation-delay: 1.75s; }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(50px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(50px) rotate(-360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</body>
+</html>

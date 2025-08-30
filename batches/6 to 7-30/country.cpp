@@ -2,40 +2,43 @@
 #include<string>
 using namespace std;
 
-class Country{
-	public:
-		string name;
-		string capital;
-		int population;
+class Animals { 
+    public: 
+        string name;
+        string color;
+        int population;
+        
+        int kuldeep(int age); // only declare here
 };
 
-int main(){
-	Country CountryObj1;
-	
-	CountryObj1.name = "India";
-	CountryObj1.capital = "Delhi";
-	CountryObj1.population = 34666000;
-	
-	Country CountryObj2;
-
-    CountryObj2.name = "USA";
-	CountryObj2.capital ="Washington, D.C.";	
-	CountryObj2.population =689545;
-	
-    Country CountryObj3;
-    
-    CountryObj3.name = "UK";
-    CountryObj3.capital ="London";
-    CountryObj3.population = 8945309;
-    
-    cout<<"name:- "<<CountryObj1.name<<"\ncapital:- "<<CountryObj1.capital
-	<<"\npopulation:- "<<CountryObj1.population<<"\n"<<endl;
-	
-	cout<<"name:- "<<CountryObj2.name<<"\ncapital:- "<<CountryObj2.capital
-	<<"\npopulation:- "<<CountryObj2.population<<"\n"<<endl;
-	
-	    cout<<"name:- "<<CountryObj3.name<<"\ncapital:- "<<CountryObj3.capital
-	<<"\npopulation:- "<<CountryObj3.population<<"\n";
-	
-	return 0;
+// define outside
+int Animals::kuldeep(int age) {
+    cout << "Mera naam Kuldeep Rajasthani!!" << endl;
+    return age;
 }
+
+int main() {
+    Animals animal1;
+    animal1.name = "Wolf";
+    animal1.color = "Gray";
+    animal1.population = 2500;
+    
+    cout << "name:- " << animal1.name
+         << "\ncolor:- " << animal1.color
+         << "\npopulation:- " << animal1.population << "\n" << endl;
+    
+    Animals animal2;
+    animal2.name = "Crocodile";
+    animal2.color = "Olive Green";
+    animal2.population = 7500;
+    
+    cout << "name:- " << animal2.name
+         << "\ncolor:- " << animal2.color
+         << "\npopulation:- " << animal2.population << "\n" << endl;
+    
+    Animals person;
+    cout << "age: " << person.kuldeep(18) << endl;
+    
+    return 0;
+}
+

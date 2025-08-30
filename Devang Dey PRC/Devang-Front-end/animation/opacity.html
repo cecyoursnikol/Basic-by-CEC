@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opacity Hover Effect</title>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .glass-box {
+      width: 300px;
+      height: 200px;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* No shadow initially */
+    }
+
+    .glass-box:hover {
+      opacity: 1;
+      box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3),
+                  0 0 20px rgba(255, 255, 255, 0.4) inset;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass-box"></div>
+
+</body>
+</html>
